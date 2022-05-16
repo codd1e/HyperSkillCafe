@@ -1,0 +1,10 @@
+body{
+    font-family: 'Akshar', sans-serif !important;
+}
+#home,
+#about,
+#products,
+#reviews,
+#contact {
+    margin-top: 50px;
+    margin-bottom: 50px;
