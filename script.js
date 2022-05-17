@@ -5,6 +5,11 @@ const reviewTitle = document.getElementById('reviewTitle');
 const reviewText = document.getElementById('reviewText');
 const reviewName = document.getElementById('reviewName');
 
+let img = document.querySelectorAll('.img-product');
+let modal = document.getElementById('myModal')
+let span = document.getElementsByClassName("close-modal")[0];
+let modalImg = document.getElementById("img01");
+
 reviewButton.addEventListener('click', (event) => {
     event.preventDefault();
 
@@ -35,3 +40,23 @@ reviewButton.addEventListener('click', (event) => {
 
     }
 });
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+for(let i = 0; i < img.length; i++) {
+    img[i].onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+    }
+}
+
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
